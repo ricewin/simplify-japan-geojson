@@ -1,6 +1,6 @@
 # simplify-japan-geojson
 
-## Simplify the geo-format of Japanese prefectures and municipalities
+## Simplify the Geo-format Prefectures and municipalities of Japan
 
 ### 日本の都道府県と市区町村の GeoJSON を簡素化します
 
