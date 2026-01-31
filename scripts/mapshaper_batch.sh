@@ -7,7 +7,7 @@ TARGETS_FILE="$ROOT_DIR/scripts/targets.tsv"
 OUTPUT_GEO_DIR="$ROOT_DIR/GeoJson"
 OUTPUT_TOPO_DIR="$ROOT_DIR/TopoJson"
 
-# 入力シェイプファイルの決定
+# 入力シェープファイルの決定
 INPUT_SHAPEFILE="${INPUT_SHAPEFILE:-}"
 
 if [[ -z "$INPUT_SHAPEFILE" ]]; then
