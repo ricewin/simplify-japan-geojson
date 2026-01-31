@@ -1,0 +1,7 @@
+{
+    "name": "simplify-japan-geojson",
+    "private": true,
+    "devDependencies": {
+        "mapshaper": "latest"
+    }
+}
