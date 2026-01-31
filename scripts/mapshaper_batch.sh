@@ -56,7 +56,13 @@ while IFS=$'\t' read -r name filter dissolve2 simplify; do
 
   mapshaper_cmd+=(-dissolve2 "$dissolve2" -simplify "$simplify%" -o "format=geojson" "$OUTPUT_GEO_DIR/$name.json")
 
-  "${mapshaper_cmd[@]}"
+  if ! "${mapshaper_cmd[@]}"; then
+    echo "Error: mapshaper failed while generating GeoJSON for target '$name' (filter='$filter', dissolve2='$dissolve2', simplify='${simplify}%')." >&2
+    exit 1
+  fi
 
-  "$MAPSHAPER_BIN" "$OUTPUT_GEO_DIR/$name.json" -o "format=topojson" "$OUTPUT_TOPO_DIR/$name.json"
+  if ! "$MAPSHAPER_BIN" "$OUTPUT_GEO_DIR/$name.json" -o "format=topojson" "$OUTPUT_TOPO_DIR/$name.json"; then
+    echo "Error: mapshaper failed while converting GeoJSON to TopoJSON for target '$name'." >&2
+    exit 1
+  fi
 done < "$TARGETS_FILE"
