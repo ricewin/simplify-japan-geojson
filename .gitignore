@@ -1,0 +1,69 @@
+# Node modules
+node_modules/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.log
+
+# Runtime / temp files
+pids
+*.pid
+*.seed
+*.pid.lock
+tmp/
+temp/
+
+# Dependency directories
+bower_components/
+jspm_packages/
+
+# Build output
+dist/
+build/
+out/
+public/
+coverage/
+.nyc_output/
+
+# Bundler / cache
+.cache/
+.parcel-cache/
+.rpt2_cache/
+.vite/
+.next/
+.nuxt/
+gatsby-cache/
+.storybook/
+storybook-static/
+
+# TypeScript
+*.tsbuildinfo
+
+# Yarn Plug'n'Play
+.pnp/
+.pnp.js
+
+# Optional npm cache
+.npm/
+
+# ESLint cache
+.eslintcache
+
+# IDE / OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Environment variables
+.env
+.env.*.local
+
+# Compiled binary addons
+build/Release/
+
+# Other
+.lock-wscript
