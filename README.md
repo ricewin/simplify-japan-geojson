@@ -26,7 +26,6 @@
   - 北海道の振興局: N03_001,N03_002,N03_007
   - 都道府県: N03_001,N03_003,N03_004,N03_007
 - Simplify
-  - Simplification: Visvalingam / weighted area
   - 全国、北海道の振興局: 0.5 %
   - 地方: 1 %
   - 都道府県: 5 %
