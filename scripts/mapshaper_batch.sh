@@ -44,7 +44,7 @@ unset IFS
 
 EACH_EXPR="var cityName=N03_004; if(cityName!==null && cityName!==undefined){var map=$DESIGNATED_CITY_MAP; if(map[cityName]){N03_007=map[cityName];}}"
 
-while IFS=$'\t' read -r name filter dissolve2 simplify; do
+while IFS=$'\t' read -r name filter dissolve simplify; do
   if [[ "$name" == "name" || -z "$name" ]]; then
     continue
   fi
@@ -54,7 +54,7 @@ while IFS=$'\t' read -r name filter dissolve2 simplify; do
     mapshaper_cmd+=(-filter "$filter")
   fi
 
-  mapshaper_cmd+=(-dissolve2 "$dissolve2" -simplify "$simplify%" -o "format=geojson" "$OUTPUT_GEO_DIR/$name.json")
+  mapshaper_cmd+=(-dissolve2 "$dissolve" -simplify "$simplify%" -o "format=geojson" "$OUTPUT_GEO_DIR/$name.json")
 
   if ! "${mapshaper_cmd[@]}"; then
     echo "Error: mapshaper failed while generating GeoJSON for target '$name' (filter='$filter', dissolve2='$dissolve2', simplify='${simplify}%')." >&2
