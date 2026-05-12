@@ -6,6 +6,7 @@ ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 TARGETS_FILE="$ROOT_DIR/scripts/targets.tsv"
 OUTPUT_GEO_DIR="$ROOT_DIR/GeoJson"
 OUTPUT_TOPO_DIR="$ROOT_DIR/TopoJson"
+MIN_POLYGON_AREA_M2="${MIN_POLYGON_AREA_M2:-50000}"
 
 # 入力シェープファイルの決定
 INPUT_SHAPEFILE="${INPUT_SHAPEFILE:-}"
@@ -79,6 +80,8 @@ while IFS=$'\t' read -r name filter dissolve simplify; do
 
   mapshaper_cmd+=(
     -dissolve2 "$dissolve"
+    -filter-islands "min-area=${MIN_POLYGON_AREA_M2}m2"
+    -filter-slivers "min-area=${MIN_POLYGON_AREA_M2}m2"
     -simplify "$simplify%"
     -o "format=geojson" "$OUTPUT_GEO_DIR/$name.json"
   )
