@@ -61,7 +61,7 @@ bash scripts/mapshaper_batch.sh
 入力ファイルを変更する場合は `INPUT_SHAPEFILE` を指定します。
 
 ```bash
-INPUT_SHAPEFILE=/path/to/N03-20250101.shp bash scripts/mapshaper_batch.sh
+INPUT_SHAPEFILE=/path/to/N03-*.shp bash scripts/mapshaper_batch.sh
 ```
 
 - 入力（自動検出）: input/N03-\*.shp
